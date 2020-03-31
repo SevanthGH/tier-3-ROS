@@ -1,0 +1,48 @@
+image: 141.69.58.19:5000/iki/ros-kinetic-amr:latest
+
+before_script:
+  - source /root/catkin_ws/devel/setup.bash
+
+stages:
+    - test basic
+    - test advanced
+
+first package:
+    stage: test basic
+    script:
+      - bash tests/01_mypackage.sh
+
+first ros program:
+    stage: test basic
+    script:
+      - bash tests/02_first_ros_program.sh
+
+ros nodes:
+    stage: test basic
+    script:
+      - bash tests/03_ros_nodes.sh
+
+publisher:
+    stage: test advanced
+    script:
+      - bash tests/04_publisher.sh
+
+subscriber:
+    stage: test advanced
+    script:
+      - bash tests/05_subscriber.sh
+
+custom message:
+    stage: test advanced
+    script:
+      - bash tests/06_custom_messages.sh
+
+# service:
+#     stage: test advanced
+#     script:
+#     - bash tests/08_ros_services.sh
+#
+ #custom service:
+#     stage: test advanced
+#     script:
+#     - bash tests/09_custom_service.sh
