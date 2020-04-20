@@ -3,7 +3,7 @@
 import rospy                            # Import the Python library for ROS
 from geometry_msgs.msg import Twist          # Import the Int32 message from the std_msgs
 
-rospy.init_node('topic_publisher')      # Initiate a Node named 'topic_publisher'
+rospy.init_node('vel_publisher')      # Initiate a Node named 'topic_publisher'
 pub = rospy.Publisher('/cmd_vel', Twist) # Create a Publisher object, that will publish
                                         # messages of type Int32
 
