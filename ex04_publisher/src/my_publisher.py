@@ -9,7 +9,7 @@ pub = rospy.Publisher('/cmd_vel', Twist) # Create a Publisher object, that will 
 
 rate = rospy.Rate(2)                    # Set a publish rate of 2 Hz
 count = Twist()                         # Create a var of type Int32
-count.linear.x = 0                          # Initialize 'count' variable
+count.linear.x = 1                          # Initialize 'count' variable
 
 while not rospy.is_shutdown():          # Create a loop that will go until someone stops the programm                  
     pub.publish(count)                  # Publish the message within the 'count' variable
