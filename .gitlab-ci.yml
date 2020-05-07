@@ -37,12 +37,25 @@ custom message:
     script:
       - bash tests/06_custom_messages.sh
 
-# service:
-#     stage: test advanced
-#     script:
-#     - bash tests/08_ros_services.sh
-#
- #custom service:
-#     stage: test advanced
-#     script:
-#     - bash tests/09_custom_service.sh
+launch files:
+    stage: test advanced
+    before_script:
+      - dir=`pwd`
+      - cd /root/catkin_ws/src
+      - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@fbe-gitlab.hs-weingarten.de/mat-iki/amr-goal-publisher.git
+      - cd /root/catkin_ws/ && catkin_make
+      - export ROS_LOG_DIR=`pwd`
+      - source /root/catkin_ws/devel/setup.bash
+      - cd $dir
+    script:
+      - bash tests/07_launch_files.sh
+
+service:
+     stage: test advanced
+     script:
+     - bash tests/08_ros_services.sh
+
+custom service:
+     stage: test advanced
+     script:
+     - bash tests/09_custom_service.sh
