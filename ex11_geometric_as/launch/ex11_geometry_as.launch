@@ -1,0 +1,5 @@
+<launch>
+  <!-- My Package launch file -->
+  <node pkg="ex11_geometric_as" type="geometry.py" name="GP" output="screen">
+  </node>
+</launch>
