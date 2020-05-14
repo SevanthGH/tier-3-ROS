@@ -1,0 +1,5 @@
+<launch>
+  <!-- My Package launch file -->
+  <node pkg="ex09_my_service" type="for_service.py" name="service_move_dist_robot" output="screen">
+  </node>
+</launch>
