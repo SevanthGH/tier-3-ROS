@@ -1,0 +1,6 @@
+<launch>
+  <!-- My Package launch file -->
+  <node pkg="ex_10_multi_square" type="move_multi_square_robot.py" name="multi_square_service" output="screen">
+  </node>
+</launch>
+
