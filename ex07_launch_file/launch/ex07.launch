@@ -1,0 +1,7 @@
+<launch>
+  <!-- My Package launch file -->
+  <node pkg="ex07_launch_file" type="my_publisher.py" name="vel_launch_subscriber" output="screen">
+  <remap from="/points" to="/goals"/>
+  </node>
+</launch>
+
